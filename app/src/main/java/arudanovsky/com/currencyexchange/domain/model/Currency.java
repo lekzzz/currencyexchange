@@ -12,6 +12,11 @@ public class Currency {
     private String name;
     private BigDecimal rateToRub;
 
+    @Override
+    public String toString() {
+        return name + ", " + code;
+    }
+
     public String getId() {
         return id;
     }

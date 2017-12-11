@@ -26,4 +26,9 @@ public class CurrenciesListTO {
     public List<CurrencyTO> getCurrencyList() {
         return currencyList;
     }
+
+
+    public void setCurrencyList(List<CurrencyTO> currencyList) {
+        this.currencyList = currencyList;
+    }
 }

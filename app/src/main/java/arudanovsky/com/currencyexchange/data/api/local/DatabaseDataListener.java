@@ -8,8 +8,7 @@ import arudanovsky.com.currencyexchange.domain.model.Currency;
  * Created by arudanovskiy on 12/11/17.
  */
 
-public interface Database {
-    void init();
-    void saveList(List<Currency> currencies);
-    void provideCurrencies();
+public interface DatabaseDataListener {
+    void onDataLoaded(List<Currency> currencies);
+    void onError(Throwable throwable);
 }

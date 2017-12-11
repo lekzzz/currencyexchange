@@ -41,4 +41,28 @@ public class CurrencyTO {
     public String getId() {
         return id;
     }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public void setNumCode(int numCode) {
+        this.numCode = numCode;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setNominal(String nominal) {
+        this.nominal = nominal;
+    }
+
+    public void setValue(String value) {
+        this.value = value;
+    }
 }

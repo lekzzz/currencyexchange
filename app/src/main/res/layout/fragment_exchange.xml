@@ -1,11 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:layout_marginLeft="16dp"
+    android:layout_marginRight="16dp"
+    android:layout_marginTop="16dp">
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/sum"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="From"
+            android:inputType="numberDecimal"/>
+    </android.support.design.widget.TextInputLayout>
+    <Spinner
+        android:id="@+id/from_currency"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"/>
+
+    <Spinner
+        android:id="@+id/to_currency"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"/>
+
+    <Button
+        android:id="@+id/convert"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Convert"/>
 
     <TextView
-        android:id="@+id/text"
+        android:id="@+id/result"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="123"/>
+        android:text="100500"
+        android:gravity="center"
+        android:textSize="24dp"
+        android:ellipsize="end"/>
 </LinearLayout>

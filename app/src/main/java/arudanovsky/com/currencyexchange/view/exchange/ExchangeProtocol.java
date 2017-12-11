@@ -17,5 +17,8 @@ public interface ExchangeProtocol {
     }
     interface ExchangePresenter extends IPresenter {
 
+        void onButtonClicked();
+
+        void onTextChanged(String text);
     }
 }
