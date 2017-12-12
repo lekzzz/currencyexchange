@@ -19,12 +19,10 @@ import arudanovsky.com.currencyexchange.domain.model.Currency;
  */
 
 public class CurrencyAdapter extends ArrayAdapter<Currency> {
-    private Context mContext;
     private List<Currency> mParameters;
 
     public CurrencyAdapter(@NonNull Context context, @LayoutRes int resource, List<Currency> parameters) {
         super(context, resource, parameters);
-        this.mContext = context;
         this.mParameters = parameters;
     }
 

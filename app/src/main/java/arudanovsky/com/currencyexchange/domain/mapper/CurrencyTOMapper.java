@@ -18,7 +18,8 @@ public class CurrencyTOMapper {
         currency.setName(currencyTO.getName());
         currency.setCode(currencyTO.getCode());
         currency.setId(currencyTO.getId());
-        currency.setRateToRub(new BigDecimal(currencyTO.getValue().replace(",", ".")).divide(new BigDecimal(currencyTO.getNominal().replace(",", ".")), 8, RoundingMode.HALF_UP));
+        currency.setRateToRub(new BigDecimal(currencyTO.getValue().replace(",", "."))
+                .divide(new BigDecimal(currencyTO.getNominal().replace(",", ".")), 8, RoundingMode.HALF_UP));
         return currency;
     }
 }

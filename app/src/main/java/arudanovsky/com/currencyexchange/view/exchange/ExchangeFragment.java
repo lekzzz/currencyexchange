@@ -114,6 +114,12 @@ public class ExchangeFragment extends BaseFragment implements ExchangeProtocol.E
     }
 
     @Override
+    public void onDetach() {
+        super.onDetach();
+        mPresenter.unsubscribe();
+    }
+
+    @Override
     public void populateConvertResult(String convertResult) {
         mResult.setText(convertResult);
     }

@@ -6,7 +6,7 @@ import android.util.Log;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
-import java.util.EmptyStackException;
+import java.util.ArrayList;
 import java.util.List;
 
 import arudanovsky.com.currencyexchange.AppPreferences;
@@ -27,9 +27,9 @@ public class ExchangePresenter extends BasePresenter implements ExchangeProtocol
     private ExchangeProtocol.ExchangeView mView;
     private ExchangeInteractor mInteractor;
     private Context mContext;
-    private List<Currency> mCurrecies;
-    private int mFromPosition = 0;
-    private int mToPosition = 0;
+    private List<Currency> mCurrecies = new ArrayList<>();
+    private int mFromPosition = -1;
+    private int mToPosition = -1;
     private BigDecimal mFromSum;
 
     public ExchangePresenter(Context context) {
