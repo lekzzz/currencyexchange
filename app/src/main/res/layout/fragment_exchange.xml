@@ -13,7 +13,7 @@
             android:id="@+id/sum"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="From"
+            android:hint="@string/from"
             android:inputType="numberDecimal"/>
     </android.support.design.widget.TextInputLayout>
     <Spinner
@@ -32,14 +32,14 @@
         android:id="@+id/convert"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Convert"/>
+        android:text="@string/convert"/>
 
     <TextView
         android:id="@+id/result"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="100500"
+        android:text="@string/convert_text"
         android:gravity="center"
-        android:textSize="24dp"
+        android:textSize="24sp"
         android:ellipsize="end"/>
 </LinearLayout>

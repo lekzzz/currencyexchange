@@ -14,6 +14,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -49,7 +50,7 @@ public class ExchangeFragment extends BaseFragment implements ExchangeProtocol.E
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_exchange, container, false);
-        mResult = view.findViewById(R.id.text);
+        mResult = view.findViewById(R.id.result);
         mEditText = view.findViewById(R.id.sum);
         mFromCurrency = view.findViewById(R.id.from_currency);
         mToCurrency = view.findViewById(R.id.to_currency);
@@ -83,19 +84,46 @@ public class ExchangeFragment extends BaseFragment implements ExchangeProtocol.E
         toAdapter = new CurrencyAdapter(getContext(), android.R.layout.simple_dropdown_item_1line, new ArrayList<Currency>());
 
         mFromCurrency.setAdapter(fromAdapter);
-//        mFromCurrency.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) )
-//            }
-//        });
+        mFromCurrency.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                mPresenter.onItemChosen(SpinnerType.FROM, i);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
         mToCurrency.setAdapter(toAdapter);
+        mToCurrency.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                mPresenter.onItemChosen(SpinnerType.TO, i);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
         mPresenter.subscribe();
         return view;
     }
 
     @Override
-    public void populateCurrencies(List<Currency> currencies) {
-        fromAdapter.updateList(currencies);
-        toAdapter.updateList(currencies);
+    public void populateConvertResult(BigDecimal convertResult) {
+        mResult.setText(convertResult.toString());
+    }
+
+    @Override
+    public void showScreen(ExchangeViewModel exchangeViewModel) {
+        mEditText.setText(exchangeViewModel.getFromSum().toString());
+        mFromCurrency.setSelection(exchangeViewModel.getFromPosition());
+        mToCurrency.setSelection(exchangeViewModel.getToPosition());
+        fromAdapter.updateList(exchangeViewModel.getList());
+        toAdapter.updateList(exchangeViewModel.getList());
     }
 }

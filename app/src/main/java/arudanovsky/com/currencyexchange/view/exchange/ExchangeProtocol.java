@@ -1,5 +1,6 @@
 package arudanovsky.com.currencyexchange.view.exchange;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import arudanovsky.com.currencyexchange.domain.model.Currency;
@@ -13,12 +14,16 @@ import arudanovsky.com.currencyexchange.view.common.IView;
 public interface ExchangeProtocol {
     interface ExchangeView extends IView {
 
-        void populateCurrencies(List<Currency> currencies);
+        void populateConvertResult(BigDecimal convertResult);
+
+        void showScreen(ExchangeViewModel exchangeViewModel);
     }
     interface ExchangePresenter extends IPresenter {
 
         void onButtonClicked();
 
         void onTextChanged(String text);
+
+        void onItemChosen(SpinnerType type, int pos);
     }
 }
