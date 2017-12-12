@@ -27,7 +27,7 @@ import arudanovsky.com.currencyexchange.view.exchange.adapter.CurrencyAdapter;
  * Created by arudanovskiy on 12/11/17.
  */
 
-public class ExchangeFragment extends BaseFragment implements ExchangeProtocol.ExchangeView{
+public class ExchangeFragment extends BaseFragment implements ExchangeProtocol.ExchangeView {
     private ExchangeProtocol.ExchangePresenter mPresenter;
     private TextView mResult;
     private EditText mEditText;
@@ -114,8 +114,8 @@ public class ExchangeFragment extends BaseFragment implements ExchangeProtocol.E
     }
 
     @Override
-    public void populateConvertResult(BigDecimal convertResult) {
-        mResult.setText(convertResult.toString());
+    public void populateConvertResult(String convertResult) {
+        mResult.setText(convertResult);
     }
 
     @Override

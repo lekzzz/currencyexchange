@@ -72,7 +72,7 @@ public class ExchangePresenter extends BasePresenter implements ExchangeProtocol
         if (validate()) {
             BigDecimal convertResult = mFromSum.multiply(mCurrecies.get(mFromPosition).getRateToRub())
                     .divide(mCurrecies.get(mToPosition).getRateToRub(), 2, RoundingMode.HALF_UP);
-            mView.populateConvertResult(convertResult);
+            mView.populateConvertResult(convertResult.toString() + " " + mCurrecies.get(mToPosition).getCode());
             saveLastConversion();
         } else {
             mView.showError(mContext.getString(R.string.invalid_data));

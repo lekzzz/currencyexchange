@@ -14,7 +14,7 @@ import arudanovsky.com.currencyexchange.view.common.IView;
 public interface ExchangeProtocol {
     interface ExchangeView extends IView {
 
-        void populateConvertResult(BigDecimal convertResult);
+        void populateConvertResult(String convertResult);
 
         void showScreen(ExchangeViewModel exchangeViewModel);
     }

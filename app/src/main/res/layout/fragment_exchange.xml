@@ -6,22 +6,43 @@
     android:layout_marginRight="16dp"
     android:layout_marginTop="16dp">
 
-    <android.support.design.widget.TextInputLayout
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <EditText
-            android:id="@+id/sum"
+
+        <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/from"
-            android:inputType="numberDecimal"/>
-    </android.support.design.widget.TextInputLayout>
-    <Spinner
-        android:id="@+id/from_currency"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"/>
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1">
+            <EditText
+                android:id="@+id/sum"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:hint="@string/from"
+                android:inputType="numberDecimal"/>
+        </android.support.design.widget.TextInputLayout>
 
+        <Spinner
+            android:layout_gravity="center_vertical"
+            android:id="@+id/from_currency"
+            android:layout_marginBottom="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="sans-serif"
+        android:textSize="18sp"
+        android:text="@string/to"/>
     <Spinner
         android:id="@+id/to_currency"
         android:layout_width="match_parent"
@@ -32,6 +53,7 @@
         android:id="@+id/convert"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-medium"
         android:text="@string/convert"/>
 
     <TextView
@@ -39,6 +61,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:text="@string/convert_text"
+        android:fontFamily="sans-serif-medium"
         android:gravity="center"
         android:textSize="24sp"
         android:ellipsize="end"/>
